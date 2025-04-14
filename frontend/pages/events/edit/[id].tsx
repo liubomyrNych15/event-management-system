@@ -17,7 +17,7 @@ export default function EditEvent() {
 
   useEffect(() => {
     if (id) {
-      fetch(`http://localhost:3001/events/${id}`)
+      fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/events/${id}`)
         .then(res => res.json())
         .then(data => {
           setFormData({
@@ -40,7 +40,7 @@ export default function EditEvent() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await fetch(`http://localhost:3001/events/${id}`, {
+      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/events/${id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

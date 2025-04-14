@@ -11,7 +11,7 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <script 
-            src={`https://maps.googleapis.com/maps/api/js?key=fjsdioj48753nvn9847539`}
+            src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`}
             async 
             defer
           ></script>
